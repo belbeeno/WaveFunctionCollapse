@@ -1,2 +1,2 @@
 # WaveFunctionCollapse
-Implementing a WFC for generating bitmaps for use with game map generation.
+Implementing a WFC for generating bitmaps for use with game map generation.  This is heavily based off the algorithms described in [https://github.com/mxgmn/WaveFunctionCollapse/](https://github.com/mxgmn/WaveFunctionCollapse/), but made from scratch.  The intention was for me to gain a better understand of whats going on, but if you can find some use for it that's great also!
