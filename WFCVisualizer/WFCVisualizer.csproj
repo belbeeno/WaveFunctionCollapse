@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <Compile Remove="res\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <EmbeddedResource Remove="res\**" />
+    <None Remove="Resources\**" />
+    <None Remove="res\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="res\LessRooms.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="res\input.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WaveFunctionCollapse\WaveFunctionCollapse.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(ProjectDir)res\* $(ProjectDir)$(OutDir)" />
+  </Target>
+
+</Project>
